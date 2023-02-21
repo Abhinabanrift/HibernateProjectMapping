@@ -83,3 +83,79 @@ public class MapmanyTester {
 	}
 
 }
+
+// these are using annotation, for the repo checkout the dao class
+// package com.mapmany;
+
+// import java.util.ArrayList;
+// import java.util.List;
+
+// import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.stereotype.Service;
+// import org.springframework.transaction.annotation.Transactional;
+
+// @Service
+// public class MapmanyTester {
+
+//     @Autowired
+//     private EmpRepository empRepository;
+
+//     @Autowired
+//     private ProjectRepository projectRepository;
+
+//     @Transactional
+//     public void testManyToMany() {
+//         Emp e1 = new Emp();
+//         Emp e2 = new Emp();
+
+//         e1.setId(101);
+//         e1.setName("Abhi");
+
+//         e2.setId(102);
+//         e2.setName("Abhinaba");
+
+//         Project p1 = new Project();
+//         Project p2 = new Project();
+
+//         p1.setPid(501);
+//         p1.setProjectname("Hr Management System");
+
+//         p2.setPid(502);
+//         p2.setProjectname("Machine Learning Project");
+
+//         List<Emp> employees = new ArrayList<Emp>();
+//         List<Project> projects = new ArrayList<Project>();
+
+//         employees.add(e1);
+//         employees.add(e2);
+//         projects.add(p1);
+//         projects.add(p2);
+
+//         e1.setProjects(projects);
+//         p2.setEmps(employees);
+
+//         empRepository.save(e1);
+//         empRepository.save(e2);
+//         projectRepository.save(p1);
+//         projectRepository.save(p2);
+
+//         // Fetching Project Names based on the given employee id
+//         Emp emp = empRepository.findById(101).orElse(null);
+//         System.out.println(emp.getName());
+//         for (Project proj : emp.getProjects()) {
+//             System.out.println(proj.getProjectname());
+//         }
+
+//         // Fetching Employee Names based on the given project id
+//         Project p = projectRepository.findById(501).orElse(null);
+//         System.out.println(p.getProjectname());
+//         if (p.getEmps() == null) {
+//             System.out.println("No such employee");
+//         } else {
+//             for (Emp e : p.getEmps()) {
+//                 System.out.println(e.getName());
+//             }
+//         }
+//     }
+// }
+
